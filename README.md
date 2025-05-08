@@ -7,7 +7,7 @@
 A comprehensive tutorial project showcasing **Decompose** for building reactive, component-based architectures in Kotlin Android development. This project demonstrates how to create modular, maintainable, and testable applications with proper separation of concerns.
 
 <p align="center">
-  <img src="assets/01_main_todo_list.png" width="300" alt="Todo App Main Screen"/>
+  <img src="assets/main.png" width="300" alt="Todo App Main Screen"/>
 </p>
 
 ## 📱 App Overview
