@@ -62,124 +62,115 @@ The app provides smart workflow features:
 
 ## 🛠️ Task Management Features
 
-### Creating New Tasks
-
-<p align="center">
-  <img src="assets/07_create_task.png" width="270" alt="Create Task Form - Light Mode"/>
-  <img src="assets/14_create_task_dark.png" width="270" alt="Create Task Form - Dark Mode"/>
-</p>
-
-Task creation includes:
-- Customizable titles and descriptions
-- Tag selection for categorization
-- Deadline setting with date picker
-- Priority selection (Low/Medium/High)
-
-### Task Details and Editing
-
 <div align="center">
   <table>
     <tr>
+      <td align="center"><img src="assets/07_create_task.png" width="250" alt="Create Task Form"/></td>
       <td align="center"><img src="assets/08_task_details.png" width="250" alt="Task Details View"/></td>
-      <td align="center"><img src="assets/09_edit_task.png" width="250" alt="Task Editing Interface"/></td>
     </tr>
     <tr>
-      <td align="center"><b>Task Details</b></td>
-      <td align="center"><b>Task Editing</b></td>
+      <td align="center"><b>Create New Tasks</b><br>Add titles, descriptions, tags, deadlines, and priorities</td>
+      <td align="center"><b>Task Details</b><br>View complete information and manage task status</td>
     </tr>
   </table>
 </div>
 
-The app supports:
-- Detailed task information viewing
-- Status transitions between workflow stages
-- Tag and metadata editing
-- Priority level adjustments
-
-### Multiple Task Views
-
-<p align="center">
-  <img src="assets/10_todo_tasks.png" width="230" alt="Todo Task List"/>
-  <img src="assets/11_in_progress_view.png" width="230" alt="In Progress Task View"/>
-  <img src="assets/12_multiple_tasks_view.png" width="230" alt="Multiple Tasks in Different States"/>
-</p>
-
-Task organization features:
-- Grouped by current status
-- Sorting options for different views
-- Clear visual separation between states
-- Intuitive transitions between states
-
-## 📊 Statistics and Insights
-
-Track your productivity with comprehensive statistics:
+## 📊 Statistics and Customization
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="assets/04_statistics_overview.png" width="250" alt="Task Statistics - Light Mode"/></td>
-      <td align="center"><img src="assets/13_statistics_detailed.png" width="250" alt="Task Statistics - Dark Mode"/></td>
+      <td align="center"><img src="assets/04_statistics_overview.png" width="250" alt="Task Statistics"/></td>
+      <td align="center"><img src="assets/05_settings_light_mode.png" width="250" alt="Settings Screen"/></td>
     </tr>
     <tr>
-      <td align="center"><b>Light Mode Statistics</b></td>
-      <td align="center"><b>Dark Mode Statistics</b></td>
+      <td align="center"><b>Productivity Stats</b><br>Track completion rates and task distribution</td>
+      <td align="center"><b>App Settings</b><br>Customize theme and app preferences</td>
     </tr>
   </table>
 </div>
-
-The statistics dashboard provides insights on:
-- **Total task count** with visual distribution
-- **Completion rates** shown as percentage
-- **Task distribution by priority** (High/Medium/Low)
-- **Progress tracking** across workflow stages
-
-## ⚙️ Settings and Customization
-
-Personalize your experience with various settings:
-
-<p align="center">
-  <img src="assets/05_settings_light_mode.png" width="250" alt="Settings Screen - Light Mode"/>
-  <img src="assets/06_settings_dark_mode.png" width="250" alt="Settings Screen - Dark Mode"/>
-</p>
-
-Customization options include:
-- **Theme switching** between light and dark modes
-- **Documentation access** for app usage help
-- **Feedback mechanism** for app rating
-- **Version information** and release details
 
 ## 🖥️ Dark Mode Support
 
-The app offers a complete dark mode experience across all screens:
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center"><img src="assets/15_task_details_dark.png" width="250" alt="Task Details in Dark Mode"/></td>
-      <td align="center"><img src="assets/16_edit_task_dark.png" width="250" alt="Task Editing in Dark Mode"/></td>
-    </tr>
-    <tr>
-      <td align="center"><b>Task Details</b></td>
-      <td align="center"><b>Task Editing</b></td>
-    </tr>
-  </table>
-</div>
-
-Dark mode provides:
-- Reduced eye strain in low-light environments
-- Battery savings on OLED screens
-- Consistent visual styling throughout the app
-- Automatic adaptation to system settings
+<p align="center">
+  <img src="assets/15_task_details_dark.png" width="250" alt="Task Details in Dark Mode"/>
+  <img src="assets/16_edit_task_dark.png" width="250" alt="Task Editing in Dark Mode"/>
+</p>
 
 ## 🧩 Technical Architecture
 
-This application demonstrates:
+This application demonstrates Decompose's powerful capabilities for component-based architecture:
 
-1. **Component Hierarchy**: Root → Screen → Child Components
-2. **State Management**: Each component has its own StateKeeper
-3. **Navigation**: Type-safe navigation using Decompose
-4. **Dependency Injection**: Clean provision of dependencies to components
-5. **SaveInstanceState**: Automatic state restoration across configuration changes
+### Core Architecture
+
+```mermaid
+graph TD
+    A[Application] --> B[RootComponent]
+    B --> C[TodoListComponent]
+    B --> D[StatisticsComponent]
+    B --> E[SettingsComponent]
+    
+    C --> F[TaskItemComponent]
+    C --> G[TaskEditorComponent]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#dfd,stroke:#333,stroke-width:2px
+    style D fill:#dfd,stroke:#333,stroke-width:2px
+    style E fill:#dfd,stroke:#333,stroke-width:2px
+```
+
+### Task Workflow State Management
+
+```mermaid
+stateDiagram-v2
+    classDef todo fill:#ffcccb,stroke:#333,stroke-width:1px
+    classDef inProgress fill:#ffffcc,stroke:#333,stroke-width:1px
+    classDef done fill:#ccffcc,stroke:#333,stroke-width:1px
+    
+    [*] --> TODO : New Task
+    
+    TODO --> IN_PROGRESS : Start Task
+    IN_PROGRESS --> DONE : Complete Task
+    IN_PROGRESS --> TODO : Return to Todo
+    DONE --> IN_PROGRESS : Reopen Task
+    
+    class TODO todo
+    class IN_PROGRESS inProgress
+    class DONE done
+```
+
+### Decompose Integration with Clean Architecture
+
+```mermaid
+graph TD
+    subgraph Presentation
+        A[Jetpack Compose UI] -->|Observes| B[Decompose Component]
+        B -->|Contains| C[Component State]
+    end
+    
+    subgraph Domain
+        E[Use Cases]
+        F[Domain Models]
+        G[Repository Interfaces]
+    end
+    
+    subgraph Data
+        H[Repository Implementations]
+        I[Data Sources]
+    end
+    
+    B -->|Invokes| E
+    E -->|Uses| F
+    E -->|Calls| G
+    G <--Implementation--> H
+    H -->|Accesses| I
+    
+    style A fill:#dfd,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333,stroke-width:2px
+    style H fill:#fcc,stroke:#333,stroke-width:2px
+```
 
 ## 📚 Additional Resources
 
