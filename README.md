@@ -10,8 +10,7 @@ A comprehensive tutorial project showcasing **Decompose** for building reactive,
 
 Decompose provides powerful tools for creating independent UI components with their own lifecycle, state management, and navigation capabilities. This tutorial walks through implementing a Todo application with clean architecture principles and Decompose integration.
 
-<!-- TODO: Add screenshot of the app here -->
-![App Screenshot](screenshots/app_screenshot.png)
+![App Overview](assets/9.Screenshot_20250508_072837.png)
 
 ## ✨ Key Features
 
@@ -20,6 +19,43 @@ Decompose provides powerful tools for creating independent UI components with th
 - **Type-Safe Navigation**: Navigation between components without Fragments
 - **Back Stack Management**: Support for navigation history
 - **Lifecycle Management**: Clean component lifecycle handling
+
+## 📱 Screenshot Gallery
+
+Below is a comprehensive table of all screenshots demonstrating different aspects of the application:
+
+| Category | Screenshot | Description | Key Concepts |
+|----------|------------|-------------|-------------|
+| **Overview** | ![App Overview](assets/9.Screenshot_20250508_072837.png) | Main app overview showing the Todo list interface | Root component visualization, Overall app layout |
+| **Todo Management** | ![Todo List](assets/10.Screenshot_20250508_072856.png) | Todo list displaying items in different stages | List component, Item rendering |
+| | ![Creating Todo](assets/11.Screenshot_20250508_072905.png) | Interface for creating a new Todo item | Form handling, User input |
+| **Workflow Stages** | ![Todo Stage](assets/12.Screenshot_20250508_072916.png) | Todo in initial stage with play button | State representation, Action buttons |
+| | ![In Progress Stage](assets/13.Screenshot_20250508_072923.png) | Todo in "In Progress" stage | State transition, Progress tracking |
+| | ![Done Stage](assets/14.Screenshot_20250508_072929.png) | Todo in "Done" stage with checked checkbox | Completion state, Visual feedback |
+| **Item Details** | ![Todo Details](assets/15.Screenshot_20250508_072938.png) | Detailed view of a Todo item | Detail component, Information display |
+| | ![Edit Todo](assets/16.Screenshot_20250508_072944.png) | Interface for editing a Todo item | Edit mode, Form validation |
+| **Navigation** | ![Navigation 1](assets/17.Screenshot_20250508_073045.png) | Navigation between screens | Stack navigation, Component transition |
+| | ![Navigation 2](assets/18.Screenshot_20250508_073051.png) | Back navigation handling | Back stack, Component preservation |
+| **Component Interaction** | ![Interaction 1](assets/19.Screenshot_20250508_073058.png) | Components communicating with each other | Event handling, Component communication |
+| | ![Interaction 2](assets/20.Screenshot_20250508_073102.png) | State update between components | State propagation, Reactive updates |
+| **Advanced Features** | ![Advanced 1](assets/21.Screenshot_20250508_073108.png) | Filtering and sorting capabilities | Filter component, State manipulation |
+| | ![Advanced 2](assets/22.Screenshot_20250508_073120.png) | Todo statistics and metrics | Analytics component, Data aggregation |
+| | ![Advanced 3](assets/23.Screenshot_20250508_073124.png) | Settings and configuration options | Preferences component, User customization |
+| | ![Advanced 4](assets/24.Screenshot_20250508_073127.png) | Theme switching and appearance options | Theme component, Visual customization |
+
+### Visual Tour of Todo States
+
+The following sequence illustrates the lifecycle of a Todo item as it progresses through different states:
+
+<p align="center">
+  <img src="assets/12.Screenshot_20250508_072916.png" width="250" alt="Todo Stage"/>
+  <img src="assets/13.Screenshot_20250508_072923.png" width="250" alt="In Progress Stage"/>
+  <img src="assets/14.Screenshot_20250508_072929.png" width="250" alt="Done Stage"/>
+</p>
+
+1. **Todo Stage**: Initial state with play button to begin task
+2. **In Progress Stage**: Active task with unchecked checkbox
+3. **Done Stage**: Completed task with checked checkbox
 
 ## 🏗️ Architecture
 
@@ -154,9 +190,6 @@ stateDiagram-v2
    - Display: Checkbox (checked)
    - Action: Unchecking the box moves todo back to "Todo" stage
 
-<!-- TODO: Add screenshots for each stage -->
-![Todo Stages](screenshots/todo_stages.png)
-
 ## 💻 Component Implementation
 
 A simple Decompose component looks like:
@@ -225,8 +258,6 @@ fun `when todo is clicked, it navigates to details screen`() {
     component.onTodoClicked("todo-1")
 }
 ```
-
-<!-- TODO: Add more test examples -->
 
 ## 👨‍💻 About the Author
 
