@@ -6,266 +6,182 @@
 
 A comprehensive tutorial project showcasing **Decompose** for building reactive, component-based architectures in Kotlin Android development. This project demonstrates how to create modular, maintainable, and testable applications with proper separation of concerns.
 
-## 🚀 Overview
+<p align="center">
+  <img src="assets/01_main_todo_list.png" width="300" alt="Todo App Main Screen"/>
+</p>
 
-Decompose provides powerful tools for creating independent UI components with their own lifecycle, state management, and navigation capabilities. This tutorial walks through implementing a Todo application with clean architecture principles and Decompose integration.
+## 📱 App Overview
 
-![App Overview](assets/9.Screenshot_20250508_072837.png)
+This Todo app demonstrates Decompose's capabilities to manage component lifecycles, state, and navigation in a clean, predictable way. It follows reactive programming principles and showcases proper separation of concerns.
+
+The app allows users to:
+- Create and manage tasks with different priorities
+- Track task progress through multiple states
+- View statistics about task completion
+- Customize the app appearance
 
 ## ✨ Key Features
 
-- **Component-Based Architecture**: Modular UI components with encapsulated logic
-- **State Management**: Reactive state with unidirectional data flow
-- **Type-Safe Navigation**: Navigation between components without Fragments
-- **Back Stack Management**: Support for navigation history
-- **Lifecycle Management**: Clean component lifecycle handling
+- **Component-Based Architecture**: Independent UI components with their own lifecycle
+- **Predictable State Management**: Immutable state and unidirectional data flow
+- **Type-Safe Navigation**: No more fragment transactions or intent flags
+- **Multi-Module Support**: Clean separation between features and layers
+- **Composable-Friendly Design**: Natural integration with Jetpack Compose
+- **Workflow Management**: Task state progression from Todo → In Progress → Done
 
-## 📱 Screenshot Gallery
+## 📋 Task Workflow Management
 
-Below is a comprehensive table of all screenshots demonstrating different aspects of the application:
+The app demonstrates a clear task progression workflow with different states:
 
-| Category | Screenshot | Description | Key Concepts |
-|----------|------------|-------------|-------------|
-| **Overview** | ![App Overview](assets/9.Screenshot_20250508_072837.png) | Main app overview showing the Todo list interface | Root component visualization, Overall app layout |
-| **Todo Management** | ![Todo List](assets/10.Screenshot_20250508_072856.png) | Todo list displaying items in different stages | List component, Item rendering |
-| | ![Creating Todo](assets/11.Screenshot_20250508_072905.png) | Interface for creating a new Todo item | Form handling, User input |
-| **Workflow Stages** | ![Todo Stage](assets/12.Screenshot_20250508_072916.png) | Todo in initial stage with play button | State representation, Action buttons |
-| | ![In Progress Stage](assets/13.Screenshot_20250508_072923.png) | Todo in "In Progress" stage | State transition, Progress tracking |
-| | ![Done Stage](assets/14.Screenshot_20250508_072929.png) | Todo in "Done" stage with checked checkbox | Completion state, Visual feedback |
-| **Item Details** | ![Todo Details](assets/15.Screenshot_20250508_072938.png) | Detailed view of a Todo item | Detail component, Information display |
-| | ![Edit Todo](assets/16.Screenshot_20250508_072944.png) | Interface for editing a Todo item | Edit mode, Form validation |
-| **Navigation** | ![Navigation 1](assets/17.Screenshot_20250508_073045.png) | Navigation between screens | Stack navigation, Component transition |
-| | ![Navigation 2](assets/18.Screenshot_20250508_073051.png) | Back navigation handling | Back stack, Component preservation |
-| **Component Interaction** | ![Interaction 1](assets/19.Screenshot_20250508_073058.png) | Components communicating with each other | Event handling, Component communication |
-| | ![Interaction 2](assets/20.Screenshot_20250508_073102.png) | State update between components | State propagation, Reactive updates |
-| **Advanced Features** | ![Advanced 1](assets/21.Screenshot_20250508_073108.png) | Filtering and sorting capabilities | Filter component, State manipulation |
-| | ![Advanced 2](assets/22.Screenshot_20250508_073120.png) | Todo statistics and metrics | Analytics component, Data aggregation |
-| | ![Advanced 3](assets/23.Screenshot_20250508_073124.png) | Settings and configuration options | Preferences component, User customization |
-| | ![Advanced 4](assets/24.Screenshot_20250508_073127.png) | Theme switching and appearance options | Theme component, Visual customization |
-
-### Visual Tour of Todo States
-
-The following sequence illustrates the lifecycle of a Todo item as it progresses through different states:
+<div align="center">
+  <h3>Todo → In Progress → Done</h3>
+</div>
 
 <p align="center">
-  <img src="assets/12.Screenshot_20250508_072916.png" width="250" alt="Todo Stage"/>
-  <img src="assets/13.Screenshot_20250508_072923.png" width="250" alt="In Progress Stage"/>
-  <img src="assets/14.Screenshot_20250508_072929.png" width="250" alt="Done Stage"/>
+  <img src="assets/01_main_todo_list.png" width="250" alt="Todo State - Tasks Ready to Start"/>
+  <img src="assets/02_in_progress_tasks.png" width="250" alt="In Progress State - Active Tasks"/>
+  <img src="assets/03_productivity_tip.png" width="250" alt="Productivity Tips for Task Management"/>
 </p>
 
-1. **Todo Stage**: Initial state with play button to begin task
-2. **In Progress Stage**: Active task with unchecked checkbox
-3. **Done Stage**: Completed task with checked checkbox
+The app provides smart workflow features:
+- **Contextual tips** for better productivity
+- **Visual indicators** for task status
+- **Priority levels** shown with color coding
+- **Deadline tracking** for time-sensitive tasks
 
-## 🏗️ Architecture
+## 🛠️ Task Management Features
 
-This project follows Clean Architecture principles with a feature-based package structure combined with Decompose component architecture. This approach allows for better separation of concerns, high cohesion, and easier maintainability.
+### Creating New Tasks
 
-### Component Architecture
+<p align="center">
+  <img src="assets/07_create_task.png" width="270" alt="Create Task Form - Light Mode"/>
+  <img src="assets/14_create_task_dark.png" width="270" alt="Create Task Form - Dark Mode"/>
+</p>
 
-```mermaid
-graph TD
-    A[Application] --> B[Root Component]
-    B --> C[TodoList Component]
-    B --> D[TodoDetail Component]
-    C --> E[Todo Items]
-    D --> F[Todo Edit]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#dfd,stroke:#333,stroke-width:2px
-    style D fill:#dfd,stroke:#333,stroke-width:2px
-    style E fill:#ffd,stroke:#333,stroke-width:1px
-    style F fill:#ffd,stroke:#333,stroke-width:1px
-```
+Task creation includes:
+- Customizable titles and descriptions
+- Tag selection for categorization
+- Deadline setting with date picker
+- Priority selection (Low/Medium/High)
 
-### Clean Architecture Layers
+### Task Details and Editing
 
-```mermaid
-graph TB
-    A[UI Layer<br>Compose/Components] --> B[Domain Layer<br>Use Cases]
-    B --> C[Data Layer<br>Repositories]
-    C --> D[Data Sources<br>Local/Remote]
-    
-    style A fill:#bbf,stroke:#333,stroke-width:2px
-    style B fill:#dfd,stroke:#333,stroke-width:2px
-    style C fill:#ffd,stroke:#333,stroke-width:2px
-    style D fill:#fcc,stroke:#333,stroke-width:2px
-```
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="assets/08_task_details.png" width="250" alt="Task Details View"/></td>
+      <td align="center"><img src="assets/09_edit_task.png" width="250" alt="Task Editing Interface"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Task Details</b></td>
+      <td align="center"><b>Task Editing</b></td>
+    </tr>
+  </table>
+</div>
 
-### Package Structure
+The app supports:
+- Detailed task information viewing
+- Status transitions between workflow stages
+- Tag and metadata editing
+- Priority level adjustments
 
-```
-app/src/main/java/dev/abd3lraouf/learn/decompose/
-├── core/                   # Shared core components
-│   ├── data/               # Data layer implementations
-│   │   └── repository/     # Repository implementations
-│   ├── di/                 # Dependency injection
-│   ├── domain/             # Domain layer (business logic)
-│   │   ├── model/          # Domain models
-│   │   └── repository/     # Repository interfaces
-│   └── presentation/       # Shared UI components
-├── features/               # Feature modules
-│   ├── todo/               # Todo feature
-│   │   ├── data/           # Todo data layer
-│   │   ├── domain/         # Todo domain layer
-│   │   │   └── usecase/    # Todo use cases
-│   │   └── presentation/   # Todo UI components
-│   │       ├── create/     # Todo creation
-│   │       ├── details/    # Todo details
-│   │       └── list/       # Todo list
-│   ├── statistics/         # Statistics feature
-│   │   ├── data/           # Statistics data layer
-│   │   ├── domain/         # Statistics domain layer
-│   │   │   ├── model/      # Statistics models
-│   │   │   └── usecase/    # Statistics use cases
-│   │   └── presentation/   # Statistics UI components
-│   └── settings/           # Settings feature
-│       ├── data/           # Settings data layer
-│       ├── domain/         # Settings domain layer
-│       │   └── model/      # Settings models
-│       └── presentation/   # Settings UI components
-├── navigation/             # Navigation components
-└── ui/                     # UI components and themes
-```
+### Multiple Task Views
 
-### Architecture Layers
+<p align="center">
+  <img src="assets/10_todo_tasks.png" width="230" alt="Todo Task List"/>
+  <img src="assets/11_in_progress_view.png" width="230" alt="In Progress Task View"/>
+  <img src="assets/12_multiple_tasks_view.png" width="230" alt="Multiple Tasks in Different States"/>
+</p>
 
-1. **Domain Layer**:
-   - Contains business logic and domain models
-   - Defines repository interfaces
-   - Contains use cases that orchestrate data flow between repositories and UI
+Task organization features:
+- Grouped by current status
+- Sorting options for different views
+- Clear visual separation between states
+- Intuitive transitions between states
 
-2. **Data Layer**:
-   - Implements repository interfaces from the domain layer
-   - Manages data sources (local, remote, memory)
+## 📊 Statistics and Insights
 
-3. **Presentation Layer**:
-   - Contains UI components built with Jetpack Compose
-   - Implements Decompose components for UI logic
-   - Follows the MVU (Model-View-Update) pattern with Decompose
+Track your productivity with comprehensive statistics:
 
-## 🧭 Navigation with Decompose
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="assets/04_statistics_overview.png" width="250" alt="Task Statistics - Light Mode"/></td>
+      <td align="center"><img src="assets/13_statistics_detailed.png" width="250" alt="Task Statistics - Dark Mode"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Light Mode Statistics</b></td>
+      <td align="center"><b>Dark Mode Statistics</b></td>
+    </tr>
+  </table>
+</div>
 
-Decompose handles navigation through a component hierarchy:
+The statistics dashboard provides insights on:
+- **Total task count** with visual distribution
+- **Completion rates** shown as percentage
+- **Task distribution by priority** (High/Medium/Low)
+- **Progress tracking** across workflow stages
 
-```mermaid
-graph TD
-    A[Root Navigation<br>RootComponent] --> B[Tab Navigation<br>TabComponent]
-    B --> C[Todo Stack<br>TodoStackComponent]
-    B --> D[Statistics Stack<br>StatisticsComponent]
-    C --> E[Todo List]
-    C --> F[Todo Details]
-    C --> G[Todo Creation]
-    
-    style A fill:#bbf,stroke:#333,stroke-width:2px
-    style B fill:#dfd,stroke:#333,stroke-width:2px
-    style C fill:#ffd,stroke:#333,stroke-width:2px
-    style D fill:#ffd,stroke:#333,stroke-width:2px
-```
+## ⚙️ Settings and Customization
 
-## 📋 Todo App Implementation
+Personalize your experience with various settings:
 
-This tutorial implements a Todo application with a three-stage workflow:
+<p align="center">
+  <img src="assets/05_settings_light_mode.png" width="250" alt="Settings Screen - Light Mode"/>
+  <img src="assets/06_settings_dark_mode.png" width="250" alt="Settings Screen - Dark Mode"/>
+</p>
 
-```mermaid
-stateDiagram-v2
-    [*] --> Todo
-    Todo --> InProgress: Click Play Button
-    InProgress --> Done: Check Checkbox
-    Done --> Todo: Uncheck Checkbox
-```
+Customization options include:
+- **Theme switching** between light and dark modes
+- **Documentation access** for app usage help
+- **Feedback mechanism** for app rating
+- **Version information** and release details
 
-### Stage Implementation 
+## 🖥️ Dark Mode Support
 
-1. **Todo Stage**:
-   - Display: Play button (no checkbox)
-   - Action: Clicking play button moves todo to "In Progress" stage
+The app offers a complete dark mode experience across all screens:
 
-2. **In Progress Stage**:
-   - Display: Checkbox
-   - Action: Checking the box moves todo to "Done" stage
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="assets/15_task_details_dark.png" width="250" alt="Task Details in Dark Mode"/></td>
+      <td align="center"><img src="assets/16_edit_task_dark.png" width="250" alt="Task Editing in Dark Mode"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Task Details</b></td>
+      <td align="center"><b>Task Editing</b></td>
+    </tr>
+  </table>
+</div>
 
-3. **Done Stage**:
-   - Display: Checkbox (checked)
-   - Action: Unchecking the box moves todo back to "Todo" stage
+Dark mode provides:
+- Reduced eye strain in low-light environments
+- Battery savings on OLED screens
+- Consistent visual styling throughout the app
+- Automatic adaptation to system settings
 
-## 💻 Component Implementation
+## 🧩 Technical Architecture
 
-A simple Decompose component looks like:
+This application demonstrates:
 
-```kotlin
-interface TodoListComponent {
-    val models: Value<Model>
-    
-    fun onTodoClicked(id: String)
-    fun onAddTodoClicked()
-    
-    data class Model(
-        val todos: List<TodoItem>,
-        val isLoading: Boolean
-    )
-}
+1. **Component Hierarchy**: Root → Screen → Child Components
+2. **State Management**: Each component has its own StateKeeper
+3. **Navigation**: Type-safe navigation using Decompose
+4. **Dependency Injection**: Clean provision of dependencies to components
+5. **SaveInstanceState**: Automatic state restoration across configuration changes
 
-class DefaultTodoListComponent(
-    private val todoRepository: TodoRepository,
-    private val componentContext: ComponentContext,
-    private val onTodoSelected: (String) -> Unit,
-    private val onAddTodo: () -> Unit
-) : TodoListComponent, ComponentContext by componentContext {
-    // Implementation
-}
-```
+## 📚 Additional Resources
 
-## 🛠️ Setup Instructions
+- [Decompose Documentation](https://arkivanov.github.io/Decompose/)
+- [Sample Code Repository](https://github.com/arkivanov/Decompose-samples)
+- [Component-Based Architecture Guide](https://arkivanov.github.io/Decompose/component/overview/)
+
+## 🔧 Setup and Installation
 
 1. Clone the repository
-   ```bash
-   git clone https://github.com/abd3lraouf/decompose-tutorial.git
-   ```
-   
-2. Open the project in Android Studio
+2. Open in Android Studio Iguana or later
+3. Build and run on your device or emulator
 
-3. Build and run the app on a device or emulator
+## 📝 License
 
-## 📚 Technologies
-
-- **Kotlin**: Modern programming language
-- **Jetpack Compose**: UI toolkit
-- **Decompose**: Component architecture
-- **Kotlin Coroutines**: Asynchronous programming
-- **Koin**: Dependency injection
-
-## 🧪 Testing
-
-Decompose's component-based architecture makes testing more straightforward:
-
-```kotlin
-@Test
-fun `when todo is clicked, it navigates to details screen`() {
-    // Create test component
-    val component = DefaultTodoListComponent(
-        mockRepository,
-        TestComponentContext(),
-        onTodoSelected = { selectedId ->
-            // Verify correct ID is passed
-            assertEquals("todo-1", selectedId)
-        },
-        onAddTodo = {}
-    )
-    
-    // Trigger action
-    component.onTodoClicked("todo-1")
-}
-```
-
-## 👨‍💻 About the Author
-
-**Abdelraouf Sabri** - Senior Android Developer
-
-- Website: [abd3lraouf.dev](https://abd3lraouf.dev)
-- GitHub: [@abd3lraouf](https://github.com/abd3lraouf)
-
----
-
-⭐️ Star this repository if you find it helpful!
+This project is licensed under the MIT License - see the LICENSE file for details.
