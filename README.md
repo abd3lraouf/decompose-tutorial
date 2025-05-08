@@ -4,6 +4,17 @@
 ![Compose](https://img.shields.io/badge/Jetpack_Compose-2025.04.01-green.svg?logo=jetpackcompose)
 ![Decompose](https://img.shields.io/badge/Decompose-3.3.0-purple.svg)
 
+<p align="center">
+  <img src="assets/organize.png" width="22%" alt="Organize"/>
+  <img src="assets/focus.png" width="22%" alt="Focus"/>
+  <img src="assets/dont-overwhelm.png" width="22%" alt="Don't Overwhelm"/>
+  <img src="assets/enjoy.png" width="22%" alt="Enjoy"/>
+</p>
+
+<p align="center">
+  <em>Decompose helps you build applications that are organized, focused, not overwhelming, and enjoyable to develop.</em>
+</p>
+
 A comprehensive tutorial project showcasing **Decompose** for building reactive, component-based architectures in Kotlin Android development. This project demonstrates how to create modular, maintainable, and testable applications with proper separation of concerns.
 
 <p align="center">
