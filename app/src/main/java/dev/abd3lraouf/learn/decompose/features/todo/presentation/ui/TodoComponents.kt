@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.todo.presentation.components
+package dev.abd3lraouf.learn.decompose.features.todo.presentation.ui
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape

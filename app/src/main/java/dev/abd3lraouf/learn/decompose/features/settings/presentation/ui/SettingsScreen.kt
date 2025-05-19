@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.settings.presentation
+package dev.abd3lraouf.learn.decompose.features.settings.presentation.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -41,7 +41,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.arkivanov.decompose.extensions.compose.subscribeAsState
-import com.woowla.compose.icon.collections.heroicons.AllIcons
 import com.woowla.compose.icon.collections.heroicons.Heroicons
 import com.woowla.compose.icon.collections.heroicons.heroicons.Outline
 import com.woowla.compose.icon.collections.heroicons.heroicons.Solid
@@ -55,6 +54,7 @@ import com.woowla.compose.icon.collections.ionicons.Ionicons
 import com.woowla.compose.icon.collections.ionicons.ionicons.Filled
 import com.woowla.compose.icon.collections.ionicons.ionicons.filled.Moon
 import com.woowla.compose.icon.collections.ionicons.ionicons.filled.Sunny
+import dev.abd3lraouf.learn.decompose.features.settings.presentation.SettingsComponent
 import dev.abd3lraouf.learn.decompose.ui.preview.PreviewSettingsComponent
 import dev.abd3lraouf.learn.decompose.ui.theme.DecomposeTutorialTheme
 

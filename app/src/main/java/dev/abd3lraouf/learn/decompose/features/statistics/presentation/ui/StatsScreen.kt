@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.statistics.presentation
+package dev.abd3lraouf.learn.decompose.features.statistics.presentation.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,14 +19,13 @@ import com.arkivanov.decompose.extensions.compose.subscribeAsState
 import com.woowla.compose.icon.collections.heroicons.Heroicons
 import com.woowla.compose.icon.collections.heroicons.heroicons.Outline
 import com.woowla.compose.icon.collections.heroicons.heroicons.Solid
-import com.woowla.compose.icon.collections.heroicons.heroicons.outline.Check
 import com.woowla.compose.icon.collections.heroicons.heroicons.outline.CheckCircle
 import com.woowla.compose.icon.collections.heroicons.heroicons.outline.ExclamationCircle
 import com.woowla.compose.icon.collections.heroicons.heroicons.outline.MinusCircle
 import com.woowla.compose.icon.collections.heroicons.heroicons.solid.ChartBar
 import com.woowla.compose.icon.collections.heroicons.heroicons.solid.Clock
 import com.woowla.compose.icon.collections.heroicons.heroicons.solid.Fire
-import dev.abd3lraouf.learn.decompose.features.statistics.presentation.components.StatisticsCard
+import dev.abd3lraouf.learn.decompose.features.statistics.presentation.StatsComponent
 import dev.abd3lraouf.learn.decompose.ui.preview.PreviewStatsComponent
 import dev.abd3lraouf.learn.decompose.ui.theme.DecomposeTutorialTheme
 

@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.todo.presentation.create
+package dev.abd3lraouf.learn.decompose.features.todo.presentation.create.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

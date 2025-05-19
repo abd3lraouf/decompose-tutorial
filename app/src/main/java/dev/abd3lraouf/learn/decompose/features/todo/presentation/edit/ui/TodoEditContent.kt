@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.todo.presentation.edit
+package dev.abd3lraouf.learn.decompose.features.todo.presentation.edit.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.subscribeAsState
-import dev.abd3lraouf.learn.decompose.features.todo.presentation.edit.components.EditTaskScreen
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.edit.TodoEditComponent
 
 @Composable
 fun TodoEditContent(

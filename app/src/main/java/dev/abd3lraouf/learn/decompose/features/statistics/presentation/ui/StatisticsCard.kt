@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.statistics.presentation.components
+package dev.abd3lraouf.learn.decompose.features.statistics.presentation.ui
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Animatable

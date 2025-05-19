@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.todo.presentation.list
+package dev.abd3lraouf.learn.decompose.features.todo.presentation.list.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,10 +9,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.arkivanov.decompose.extensions.compose.subscribeAsState
-import dev.abd3lraouf.learn.decompose.features.todo.presentation.components.AddTaskFab
-import dev.abd3lraouf.learn.decompose.features.todo.presentation.create.TodoCreateContent
-import dev.abd3lraouf.learn.decompose.features.todo.presentation.details.TodoDetailsContent
-import dev.abd3lraouf.learn.decompose.features.todo.presentation.edit.TodoEditContent
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.ui.AddTaskFab
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.create.ui.TodoCreateContent
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.details.ui.TodoDetailsContent
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.edit.ui.TodoEditContent
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.list.TodoListComponent
 import dev.abd3lraouf.learn.decompose.features.todo.presentation.list.TodoListComponent.Child
 
 @Composable

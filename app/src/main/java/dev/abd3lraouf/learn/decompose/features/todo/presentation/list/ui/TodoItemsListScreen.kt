@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.todo.presentation.list
+package dev.abd3lraouf.learn.decompose.features.todo.presentation.list.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -32,7 +32,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabPosition
@@ -70,6 +69,7 @@ import com.woowla.compose.icon.collections.heroicons.heroicons.outline.ArrowUp
 import com.woowla.compose.icon.collections.heroicons.heroicons.outline.Funnel
 import dev.abd3lraouf.learn.decompose.features.todo.presentation.list.ListComponent.SortOption
 import androidx.compose.material3.Surface
+import dev.abd3lraouf.learn.decompose.features.todo.presentation.list.ListComponent
 
 @Composable
 fun TodoItemsListScreen(

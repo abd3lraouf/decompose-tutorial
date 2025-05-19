@@ -1,4 +1,4 @@
-package dev.abd3lraouf.learn.decompose.features.statistics.presentation.components
+package dev.abd3lraouf.learn.decompose.features.statistics.presentation.ui
 
 import androidx.compose.runtime.Composable
 import dev.abd3lraouf.learn.decompose.ui.components.TopAppBarConfig
